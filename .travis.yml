@@ -1,0 +1,39 @@
+sudo: false
+dist: trusty
+group: travis_latest
+language: ruby
+rvm:
+  - 2.5
+install: gem install jekyll:2.5.3 kramdown nokogiri
+script: jekyll build -c ./_config_base.yml,./_config_prod.yml
+before_deploy:
+  - mkdir -p $ARTIFACTS_PATH
+  - jq -n env | jq '. | with_entries(select(.key | startswith("TRAVIS")))' > ./${BUILD_PATH}/ciMetadata.json
+  - eval "XZ_OPT=-0 tar --transform 's,/*[^/]/*[^/]*/[^/]*/,,' -cJf ${ARTIFACTS_PATH}.tar.xz ./${BUILD_PATH} "
+deploy:
+  - provider: s3
+    bucket: "$BUCKET_NAME"
+    acl: private
+    region: "$REGION_NAME"
+    detect_encoding: true
+    local-dir: "$ARTIFACTS_MAIN_DIR"
+    skip_cleanup: true
+    access_key_id:
+      secure: P+sHSlspV/UE3/pKVEbMINfYZLHDMIRyAV93rtKkv5HZx5t98YvKcfebsm1lgL8VMM+jjwDFQXB36BVStaWn+xh8l6V0n5aedUGPBtUmsjCD9pbf1CYLcfWz4nRcPUo6t48NOfPq8ItkJYBZSY0IbdGZomtZnxAr/ZpCgH7P8a0=
+    secret_access_key:
+      secure: iM/RgRvvT5+jsx8D5mXaiKWB/dD0Y9obYt3py3T59/wbbDgWeJKgGjj/ioEAdPeTmAIgwzG/ENIhUMrXg/gbaOp1e2WlID4zUWQLBLQiJ+b7STjeDTEjWhmAh/aZ3OuC4Wmk+1ghGpHRgd6IbuGadqyrbLBQ2nQli4vhD9bluaU=
+    on:
+      all_branches: true
+env:
+  global:
+    - ARTIFACTS_MAIN_DIR=output
+    - REPO_NAME=${TRAVIS_REPO_SLUG##*\/}
+    - ARTIFACTS_PATH="${ARTIFACTS_MAIN_DIR}/${REPO_NAME}/${TRAVIS_TAG:-$TRAVIS_BRANCH}/${REPO_NAME}"
+    - BUCKET_NAME=bp-frontier-package
+    - REGION_NAME=eu-west-1
+    - BUILD_PATH=public/frontier
+notifications:
+  slack:
+    rooms:
+      secure: Gzke730oSy6DQ/4sxsVx0oWZoyITmCoHuHt5YJSk8+crnuJWmsjiqe1aveIKsQ2HpfSKwM/eKBfc0ftWq8N7zgxtvHpxbFFRQ/lZDfv1IqG81WIyPXxeaSzDbnLiBY3w5bmd1O8U1NR4tsoEle6XViuB0MQp6LOLPkWmUO/iuJU=
+
