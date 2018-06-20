@@ -10,13 +10,13 @@ type: System Monitoring
 1. Connect to the host where your SNMP trap server is installed, and install the BigPanda agent package.
 
         $ echo deb http://repos.bigpanda.io/deb `lsb_release -c -s` main | sudo tee /etc/apt/sources.list.d/bigpanda.list
-        
+    
         $ curl https://repos.bigpanda.io/config/bigpanda.pub | sudo apt-key add -
     
         $ sudo apt-get update
     
         $ sudo apt-get install bigpanda-agent
-    
+
     **Note**: If you run **RHEL 5**, you will need to install the EPEL repository. Please consult the FAQ for instructions.
 
 2. Install the BigPanda SNMP daemon:

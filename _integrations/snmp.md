@@ -17,7 +17,7 @@ type: System Monitoring
 2. Install the BigPanda SNMP daemon:
 
         $ sudo yum install bigpanda-snmpd
-        
+ 
 <!-- section-separator -->
 
 #### Configure the BigPanda Agent
@@ -32,14 +32,14 @@ type: System Monitoring
 #### Configure the BigPanda SNMP Agent
 
 1. If any MIBs are not included by default, they need to be compiled and added manually:
-  
+
         $ cd /etc/bigpanda/snmpd/mib_compiler
         $ ./compile_mib.sh --input-directory <path to MIBs> --output-directory /etc/bigpanda/snmpd/conf/
 
 2. Modify Config Files
 
     For MIBs that are to be monitored, their respective Event Configuration files must be added to the bigpanda-snmpd configuration file:
-    
+
     Edit `/etc/bigpanda/snmpd/snmp-daemon.json`, and add the paths to the event_config files to the `processing.event-configs` array.
 
     For example:
@@ -69,7 +69,7 @@ type: System Monitoring
 1. Start the BigPanda agent and snmpd services by running the following commands:
 
     * For RHEL 5 and 7:
-   
+
             $ sudo service bigpanda start
             $ sudo service bigpanda-snmpd start
 
@@ -77,4 +77,3 @@ type: System Monitoring
 
             $ sudo initctl start bigpanda
             $ sudo initctl start bigpanda-snmpd
-    

@@ -68,13 +68,12 @@ type: System Monitoring
 
 1. Start the BigPanda agent and snmpd services by running the following commands:
 
-    * For RHEL 5 and 7:
-   
+    * For CentOS 5 and 7:
+
             $ sudo service bigpanda start
             $ sudo service bigpanda-snmpd start
 
-    * For RHEL 6:
+    * For CentOS 6:
 
             $ sudo initctl start bigpanda
             $ sudo initctl start bigpanda-snmpd
-    

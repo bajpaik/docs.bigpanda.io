@@ -44,9 +44,9 @@ type: System Monitoring
 2. Modify Config Files
 
     For MIBs that are to be monitored, their respective Event Configuration files must be added to the bigpanda-snmpd configuration file:
-    
+
     Edit `/etc/bigpanda/snmpd/snmp-daemon.json`, and add the paths to the event_config files to the `processing.event-configs` array.
-    
+
     For example:
 
         $ vi /etc/bigpanda/snmpd/snmp-daemon.json
