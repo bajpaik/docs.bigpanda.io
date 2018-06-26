@@ -77,3 +77,17 @@ type: System Monitoring
 
             $ sudo initctl start bigpanda
             $ sudo initctl start bigpanda-snmpd
+
+<!-- section-separator -->
+
+#### Test the Integration
+
+1. Install SNMP Utils:
+
+        $ sudo yum install net-snmp-utils
+
+2. Send the test SNMP trap:
+
+        $ sudo snmptrap -v 2c -c public 127.0.0.1:5000 1 1.3.6.1.2.1.1 1.3.6.1.2.1.1.5 s "production-switch-1" 1.3.6.1.2.1.1.1 s "SNMP trap test"
+    
+    **Note**: Since it is a test message, it won't be resolved automatically. Click **Resolve incident** in the BigPanda UI to manually resolve it.

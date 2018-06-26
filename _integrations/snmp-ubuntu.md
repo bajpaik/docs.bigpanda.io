@@ -10,14 +10,9 @@ type: System Monitoring
 1. Connect to the host where your SNMP trap server is installed, and install the BigPanda agent package.
 
         $ echo deb http://repos.bigpanda.io/deb `lsb_release -c -s` main | sudo tee /etc/apt/sources.list.d/bigpanda.list
-    
         $ curl https://repos.bigpanda.io/config/bigpanda.pub | sudo apt-key add -
-    
         $ sudo apt-get update
-    
         $ sudo apt-get install bigpanda-agent
-
-    **Note**: If you run **RHEL 5**, you will need to install the EPEL repository. Please consult the FAQ for instructions.
 
 2. Install the BigPanda SNMP daemon:
 
@@ -29,8 +24,8 @@ type: System Monitoring
 
 1. Configure the agent to work with the Raw Alerts Transfer plugin by running the following commands:
 
-        $ bigpanda-config --init --token $TOKEN
-        $ bigpanda-config --add rawalertstransfer --app-key $STREAM_ID
+        $ sudo bigpanda-config --init --token $TOKEN
+        $ sudo bigpanda-config --add rawalertstransfer --app-key $STREAM_ID
 
 <!-- section-separator -->
 
@@ -39,7 +34,7 @@ type: System Monitoring
 1. If any MIBs are not included by default, they need to be compiled and added manually:
 
         $ cd /etc/bigpanda/snmpd/mib_compiler
-        $ ./compile_mib.sh --input-directory <path to MIBs> --output-directory /etc/bigpanda/snmpd/conf/
+        $ sudo ./compile_mib.sh --input-directory <path to MIBs> --output-directory /etc/bigpanda/snmpd/conf/
 
 2. Modify Config Files
 
@@ -49,8 +44,8 @@ type: System Monitoring
 
     For example:
 
-        $ vi /etc/bigpanda/snmpd/snmp-daemon.json
-    
+        $ sudo vi /etc/bigpanda/snmpd/snmp-daemon.json
+
         ...
     
         {
@@ -75,3 +70,17 @@ type: System Monitoring
 
         $ sudo service bigpanda start
         $ sudo service bigpanda-snmpd start
+
+<!-- section-separator -->
+
+#### Test the Integration
+
+1. Install SNMP Utils:
+
+        $ sudo apt-get install snmp
+
+2. Send the test SNMP trap:
+
+        $ sudo snmptrap -v 2c -c public 127.0.0.1:5000 1 1.3.6.1.2.1.1 1.3.6.1.2.1.1.5 s "production-switch-1" 1.3.6.1.2.1.1.1 s "SNMP trap test"
+    
+    **Note**: Since it is a test message, it won't be resolved automatically. Click **Resolve incident** in the BigPanda UI to manually resolve it.
