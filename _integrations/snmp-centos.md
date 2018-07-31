@@ -33,7 +33,7 @@ type: System Monitoring
 
 1. If any MIBs are not included by default, they need to be compiled and added manually:
 
-        $ cd /etc/bigpanda/snmpd/mib_compiler
+        $ cd /opt/bigpanda/bigpanda-snmpd/mib_compiler
         $ sudo ./compile_mib.sh --input-directory <path to MIBs> --output-directory /etc/bigpanda/snmpd/conf/
 
 2. Modify Config Files
