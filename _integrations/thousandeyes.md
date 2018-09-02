@@ -16,7 +16,7 @@ type: Application Monitoring
 3. In the **Edit Webhooks** popup, click **Add New Webhook**.  Enter the following information, click **Test** to confirm connectivity, and then click **Add New Webhook**:
 
         Name: BigPanda
-        URL: https://custom-api.bigpanda.io/thousandeyes/
+        URL: https://custom-api.bigpanda.io/latest/thousandeyes?app_key=$STREAM_ID
         Auth Type: Token
         Bearer Token: $TOKEN
 
