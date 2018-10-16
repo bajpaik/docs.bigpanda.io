@@ -12,7 +12,7 @@ For each project in Airbrake:
 * Click the small menu icon on the upper left corner, then navigate to `Project Settings`.
 * From the left menu, select `Integrations`.
 * Select `WebHooks` integration and enter the `Url`:  
-  ```https://api.bigpanda.io/data/integrations/airbrake?$URL_PARAMS```
+  ```$WEB_API_BASE_URL/data/integrations/airbrake?$URL_PARAMS```
 * Keep the `Active` check box selected.
 * Click `Save`.
 

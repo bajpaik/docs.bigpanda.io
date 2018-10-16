@@ -13,7 +13,7 @@ Login to Scout and in *Account > Notifications* click on *Add Webhook*.
 In the New Webhook form, fill out the following:  
 
 * Webhook Name: `BigPanda`
-* Webhook URL: `https://api.bigpanda.io/data/integrations/scout?$URL_PARAMS`
+* Webhook URL: `$WEB_API_BASE_URL/data/integrations/scout?$URL_PARAMS`
 
 
 <!-- section-separator -->

@@ -13,7 +13,7 @@ Login to LogicMonitor and go to "Settings" > "Integrations" > "Add" > "Custom HT
 * Select ״Use different URLs or data formats to notify on various alert activity״ (Important for Acknowledge feature)
 * Make sure "New Alerts" and "Cleared" are checked
 * HTTP Method: HTTP Post
-* URL for New and Cleared alerts: `https://api.bigpanda.io/data/integrations/logicmonitor?$URL_PARAMS`
+* URL for New and Cleared alerts: `$WEB_API_BASE_URL/data/integrations/logicmonitor?$URL_PARAMS`
 * Alert Data: choose "raw" and format: "JSON"
 
 Fill payload with:
@@ -55,7 +55,7 @@ Fill payload with:
 * Manage the BigPanda existing integration in logicmonitor
 * Press the plus (+) button
 * Choose the Acknowledged checkbox
-* Webhook URL for Acknowledged alerts: `https://api.bigpanda.io/data/integrations/logicmonitor?$URL_PARAMS&ack=true`
+* Webhook URL for Acknowledged alerts: `$WEB_API_BASE_URL/data/integrations/logicmonitor?$URL_PARAMS&ack=true`
 * Use the same payload given above
 <!-- section-separator -->
 

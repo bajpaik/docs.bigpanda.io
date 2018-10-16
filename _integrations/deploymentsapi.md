@@ -38,7 +38,7 @@ For more information on authentication, start and end event methods, and respons
 
 #### Notify BigPanda When a Deployment Starts
 
-POST your JSON object to `https://api.bigpanda.io/data/events/deployments/start` with the following HTTP headers:
+POST your JSON object to `$WEB_API_BASE_URL/data/events/deployments/start` with the following HTTP headers:
 
     Authorization: Bearer $TOKEN  
     Content-Type: application/json  
@@ -48,7 +48,7 @@ For example, run the following cURL call (with deployment-start.json containing 
     curl -i -X POST -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" \
     -d @deployment-start.json \
-    "https://api.bigpanda.io/data/events/deployments/start"
+    "$WEB_API_BASE_URL/data/events/deployments/start"
 
 <!-- section-separator -->
 
@@ -81,7 +81,7 @@ Example:
 
 **Note**: Deployments appear as in-progress until you send a matching end notification.
 
-POST your JSON object to `https://api.bigpanda.io/data/events/deployments/end` with the following HTTP headers:
+POST your JSON object to `$WEB_API_BASE_URL/data/events/deployments/end` with the following HTTP headers:
 
     Authorization: Bearer $TOKEN 
     Content-Type: application/json  
@@ -91,6 +91,6 @@ For example, run the following cURL call (with deployment-end.json containing th
     curl -i -X POST -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" \
     -d @deployment-end.json \
-    "https://api.bigpanda.io/data/events/deployments/end"
+    "$WEB_API_BASE_URL/data/events/deployments/end"
 
 

@@ -23,7 +23,7 @@ Using BigPanda's Alerts API is easy. Start by creating an app key with the form 
 
 The integrated system should call the Alerts API endpoint:
     
-    https://api.bigpanda.io/data/v2/alerts
+    $WEB_API_BASE_URL/data/v2/alerts
     
 
 Use the following HTTP headers:
@@ -66,14 +66,14 @@ Below is an example of a full payload:
  
     curl -XPOST -H "Content-Type: application/json" \
     -H "Authorization: Bearer $TOKEN" \
-    https://api.bigpanda.io/data/v2/alerts \
+    $WEB_API_BASE_URL/data/v2/alerts \
     -d '{ "app_key": "$STREAM_ID", "status": "critical", "host": "production-database-1", "check": "CPU overloaded" }'
 
 The alert should appear in the [BigPanda dashboard](https://a.bigpanda.io) almost instantaniously. Now close the alert by executing: 
 
     curl -XPOST -H "Content-Type: application/json" \
     -H "Authorization: Bearer $TOKEN" \
-    https://api.bigpanda.io/data/v2/alerts \
+    $WEB_API_BASE_URL/data/v2/alerts \
     -d '{ "app_key": "$STREAM_ID", "status": "ok", "host": "production-database-1", "check": "CPU overloaded" }'
     
 <!-- docs-only-start -->

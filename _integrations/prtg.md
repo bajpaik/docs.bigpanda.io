@@ -18,7 +18,7 @@ type: System Monitoring
   * In **Notification Name**, enter `BigPanda Notification`.
   * For **NOTIFICATION SUMMARIZATION > Method**, select **Always notify ASAP**.
   * Select the **EXECUTE HTTP ACTION** check box.
-  * In **EXECUTE HTTP ACTION > URL**, enter `https://api.bigpanda.io/data/integrations/prtg?$URL_PARAMS`.
+  * In **EXECUTE HTTP ACTION > URL**, enter `$WEB_API_BASE_URL/data/integrations/prtg?$URL_PARAMS`.
   * In **EXECUTE HTTP ACTION > Postdata**, enter `sensor=%name&status=%status&datetime=%datetime&timezone=%timezone&message=%message&group=%group&device=%device&host=%host&home=%home&prio=%prio&since=%since&linksensor=%linksensor`.
 
   Your Add Notification page should look like this example.  

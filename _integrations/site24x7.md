@@ -16,7 +16,7 @@ type: Application Monitoring
 2\. Click **Add Automation**, and add a new action by filling in the fields:
 
 * **Display Name**: `BigPanda`
-* **URL**: `https://api.bigpanda.io/data/integrations/site24x7?$URL_PARAMS`
+* **URL**: `$WEB_API_BASE_URL/data/integrations/site24x7?$URL_PARAMS`
 * **TimeOut**: `30 secs`
 * **HTTP Method**: select **POST**
 * **Send Incident Parameters** and **Post as JSON**: select the check boxes

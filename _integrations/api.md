@@ -9,7 +9,7 @@ draft: false
 
 Configure the integrated system to call the Alerts API endpoint:
     
-    https://api.bigpanda.io/data/v2/alerts
+    $WEB_API_BASE_URL/data/v2/alerts
     
 
 Use the following HTTP headers:
@@ -54,12 +54,12 @@ To validate that everything is configured correctly, send a test alert by runnin
  
     curl -XPOST -H "Content-Type: application/json" \
     -H "Authorization: Bearer $TOKEN" \
-    https://api.bigpanda.io/data/v2/alerts \
+    $WEB_API_BASE_URL/data/v2/alerts \
     -d '{ "app_key": "$STREAM_ID", "status": "critical", "host": "production-database-1", "check": "CPU overloaded" }'
 
 The alert should now appear in the [Incidents dashboard](https://a.bigpanda.io). Close the alert by running: 
 
     curl -XPOST -H "Content-Type: application/json" \
     -H "Authorization: Bearer $TOKEN" \
-    https://api.bigpanda.io/data/v2/alerts \
+    $WEB_API_BASE_URL/data/v2/alerts \
     -d '{ "app_key": "$STREAM_ID", "status": "ok", "host": "production-database-1", "check": "CPU overloaded" }'

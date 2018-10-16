@@ -13,7 +13,7 @@ type: System Monitoring
 2\. In the **New Webhook** form, enter the following information:  
 
 * **Webhook Name:** `BigPanda`
-* **Webhook URL:** `https://api.bigpanda.io/data/integrations/datadog?$URL_PARAMS`
+* **Webhook URL:** `$WEB_API_BASE_URL/data/integrations/datadog?$URL_PARAMS`
 * **Use custom payload:** Select the check box.
 * **Custom payload:** Enter the following JSON payload:
 

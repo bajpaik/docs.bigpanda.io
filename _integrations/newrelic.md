@@ -19,7 +19,7 @@ For more information, see the [legacy alerting system documentation](https://doc
 2\. Fill in the form:
 
 * **Channel Name**: `BigPanda`
-* **Base URL**: `https://api.bigpanda.io/data/integrations/newrelic?$URL_PARAMS`
+* **Base URL**: `$WEB_API_BASE_URL/data/integrations/newrelic?$URL_PARAMS`
 
 3\. Click **Add Custom Payload**, scroll to the bottom and ensure that **JSON** is selected as the payload type.
 

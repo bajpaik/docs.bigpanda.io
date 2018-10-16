@@ -12,7 +12,7 @@ Log in to StatusCake.
 Go to [Contact Groups > Create New Contact Group](https://www.statuscake.com/App/ContactGroup.php), and fill out the form as follows:
 
 * **Group Name:** `BigPanda`
-* **Webhook URL** (POST): `https://api.bigpanda.io/data/integrations/statuscake?$URL_PARAMS`
+* **Webhook URL** (POST): `$WEB_API_BASE_URL/data/integrations/statuscake?$URL_PARAMS`
 
 Click on *UPDATE THIS CONTACT GROUP*.
 

@@ -14,7 +14,7 @@ type: Application Monitoring
 
 * **Type**: Select **Webhook**
 * **Name**: `BigPanda Integration`
-* **URL**: `https://api.bigpanda.io/data/integrations/pingdomwebhook?$URL_PARAMS`
+* **URL**: `$WEB_API_BASE_URL/data/integrations/pingdomwebhook?$URL_PARAMS`
 
 Make sure **Active** is selected (default).
 

@@ -38,7 +38,7 @@ __Note__: Complete this step only one time per AppDynamics controller.
 6\. In the **Request URL** section:
 
 * For the method, select **POST**.
-* In the **Raw URL** field, enter `https://api.bigpanda.io/data/integrations/appdynamics-webhook?app_key=$STREAM_ID`.
+* In the **Raw URL** field, enter `$WEB_API_BASE_URL/data/integrations/appdynamics-webhook?app_key=$STREAM_ID`.
     
 7\. In the **Custom Request Headers** section, add a header with the following values:
     `Authorization`     `Bearer $TOKEN`

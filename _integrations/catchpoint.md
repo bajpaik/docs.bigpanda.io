@@ -15,7 +15,7 @@ In Catchpoint, go to **Settings > API**.
 
 1\. Under **Alerts API**, add a new endpoint by filling in the fields:
 
-* **Endpoint URL**: `https://api.bigpanda.io/data/integrations/catchpoint?$URL_PARAMS`
+* **Endpoint URL**: `$WEB_API_BASE_URL/data/integrations/catchpoint?$URL_PARAMS`
 * **Status**: **Active**
 
 2\. Under **Format**, click **Select Template > Add new**. A form opens where you can define the template.
