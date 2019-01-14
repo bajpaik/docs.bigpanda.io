@@ -1,8 +1,8 @@
 
     * For CentOS 5 and 7:
 
-            sudo service bigpanda ACTION
+            sudo service SERVICE_LOWER ACTION
 
     * For CentOS 6:
 
-            sudo initctl ACTION bigpanda
+            sudo initctl ACTION SERVICE_LOWER

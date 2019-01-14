@@ -1,2 +1,2 @@
 
-        sudo service bigpanda ACTION
+        sudo service SERVICE_LOWER ACTION
