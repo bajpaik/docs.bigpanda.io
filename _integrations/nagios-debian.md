@@ -1,5 +1,5 @@
 ---
-layout: integration 
+layout: integration
 title: "Nagios (Debian)"
 draft: false
 type: System Monitoring
@@ -14,7 +14,7 @@ type: System Monitoring
 
 3. Start the BigPanda agent service by running the following command:
 
-<!-- docs-include _integrations/agent-common/configure-agent-actions/start-debian.md:::SERVICENAME=Nagios:::SERVICE_LOWER=nagios:::ACTION=start -->
+<!-- docs-include _integrations/agent-common/configure-agent-actions/start-debian.md:::SERVICENAME=Bigpanda:::SERVICE_LOWER=bigpanda:::ACTION=start -->
 
 <!-- section-separator -->
 
