@@ -22,7 +22,7 @@ type: System Monitoring
 
 4. Restart the Nagios service.
 
-<!-- docs-include _integrations/agent-common/configure-agent-actions/start-debian.md:::SERVICENAME=Nagios:::SERVICE_LOWER=nagios:::ACTION=start -->
+<!-- docs-include _integrations/agent-common/configure-agent-actions/start-debian.md:::SERVICENAME=Nagios:::SERVICE_LOWER=nagios:::ACTION=restart -->
 
 <!-- section-separator -->
 
